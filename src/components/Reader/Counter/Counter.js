@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Controls from '../Controls/Controls';
+import Publication from '../Publication/Publication';
+import Controls from './Controls/Controls';
 
 export default class Counter extends Component {
   // static defaultProp = { step: 1 };
@@ -13,31 +14,45 @@ export default class Counter extends Component {
 
   state = {
     value: this.props.initialValue,
+    items: this.props.items,
+    index: 0,
   };
+
+  // changeIndex = step => {
+  //   const { index } = this.state;
+  //   this.setState({
+  //     index: index + step,
+  //   });
+  // };
 
   handleDecrement = () => {
     const { step } = this.props;
     const { value } = this.state;
-    // this.setState({ value: value - step });
+    const { index } = this.state;
     value >= 2 &&
       this.setState(prevState => {
-        return { value: prevState.value - step };
+        return { value: prevState.value - step, index: index - step };
       });
   };
+
   handleIncrement = () => {
     const { step } = this.props;
     const { value } = this.state;
-    // this.setState({ value: value + step });
-    value <= 9 &&
+    const { index } = this.state;
+    value <= 11 &&
       this.setState(prevState => {
-        return { value: prevState.value + step };
+        return { value: prevState.value + step, index: index + step };
       });
   };
+
   render() {
     const { value } = this.state;
+    const { items } = this.props;
+    const { index } = this.state;
     return (
       <Fragment>
-        <p className="counter">{value}/10</p>
+        <Publication item={items[index]} />
+        <p className="counter">{value}/12</p>
         <Controls
           onDecrement={this.handleDecrement}
           onIncrement={this.handleIncrement}

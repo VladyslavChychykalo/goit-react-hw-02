@@ -4,7 +4,7 @@ import publication from '../path/to/publication.json';
 
 const App = () => (
   <Fragment>
-    <Reader items={publications} />
+    <Reader items={publication} />
   </Fragment>
 );
 

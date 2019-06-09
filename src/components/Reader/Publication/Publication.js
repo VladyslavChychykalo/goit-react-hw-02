@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Publication extends Component {
-  render() {
-    return (
-      <article className="publication">
-        <h2>Lorem ipsum dolor sit amet.</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-          molestiae dolore ipsa sed similique necessitatibus. Aut qui porro
-          quibusdam esse libero est eius, repellendus unde nihil, sequi
-          voluptate eaque officiis aliquam impedit laborum adipisci cumque sit.
-        </p>
-      </article>
-    );
-  }
-}
+const Publication = ({ item }) => (
+  <article className="publication">
+    <h2> {item.title} </h2> <p>{item.text}</p>{' '}
+  </article>
+);
+
+// Publication.propTypes = {
+//   item: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     text: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
+export default Publication;
