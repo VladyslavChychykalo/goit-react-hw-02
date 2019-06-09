@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Publication from './Publication/Publication';
 
+
 class Reader extends Component {
   static defaultProp = {};
   static propTypes = {};
@@ -22,8 +23,8 @@ class Reader extends Component {
         <p className="counter">3/10</p>
 
         <section className="controls">
-          <button className="button">Назад</button>
-          <button className="button">Вперед</button>
+          <button className="button" onClick={} >Назад</button>
+          <button className="button" onClick={} >Вперед</button>
         </section>
       </div>
     );
