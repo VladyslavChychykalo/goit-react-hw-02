@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Publication from '../Publication/Publication';
+import Publication from './Publication/Publication';
 import Controls from './Controls/Controls';
 
 export default class Counter extends Component {
@@ -14,7 +14,6 @@ export default class Counter extends Component {
 
   state = {
     value: this.props.initialValue,
-    items: this.props.items,
     index: 0,
   };
 
